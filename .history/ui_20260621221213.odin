@@ -19,4 +19,4 @@ Menu :: struct {
 }
 
 // TODO: Placeholder for mockup of menu to test UI layout options
-main_menu:= Menu{{1350, 700, 400, 400}, {}}
+main_menu:= Menu{{1350, 700, 400, 400}, }

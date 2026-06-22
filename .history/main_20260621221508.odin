@@ -27,7 +27,7 @@ dice_sound := k2.load_sound_from_file("assets/dice.wav")
 rolled: bool
 
 for k2.update() {
-k2.clear(k2.LIGHT_BROWN)
+k2.clear(k2.)
 
 
 point := k2.get_mouse_position()

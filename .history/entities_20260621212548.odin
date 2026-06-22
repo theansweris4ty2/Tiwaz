@@ -6,7 +6,8 @@ Tile :: struct {
     rect: k2.Rect,
     product: string,
     production_value: i32,
-    texture: k2.Texture
+    color: k2.Color,
+    image: k2.Texture
     
 
 }

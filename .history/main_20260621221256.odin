@@ -15,6 +15,7 @@ SCREEN_HEIGHT :: 900
 main::proc() {
 player := Player{}
 append(&buttons, button1)
+append(&buttons2, button2)
 k2.init(SCREEN_WIDTH, SCREEN_HEIGHT, "Tiwaz", {})
 tiles := build_board()
 defer delete(tiles)
@@ -27,7 +28,7 @@ dice_sound := k2.load_sound_from_file("assets/dice.wav")
 rolled: bool
 
 for k2.update() {
-k2.clear(k2.LIGHT_BROWN)
+k2.clear(k2.WHITE)
 
 
 point := k2.get_mouse_position()

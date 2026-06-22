@@ -4,7 +4,7 @@ import "core:math/rand"
 import k2 "vendor:karl2d"
 
 
-
+// Placeholder proc to test whether having proc associated with tiles works
 
 
 // TODO add logic for building UI either in the build_board proc or as a separate proc. 
@@ -18,7 +18,7 @@ build_board :: proc() -> [dynamic]Tile{
         x = f32(i*100) + 350
         for h in 0..=i {
             y = f32(h*100) + start_y
-            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}})
+            append(&tiles, Tile{"", k2.Rect{x, y, 50, 100}, " ", 0,  {}})
         }
         start_y -= 50
         start_x += 50
@@ -29,7 +29,7 @@ build_board :: proc() -> [dynamic]Tile{
         x = f32(i*100) + f32(850) 
         for h in 0..=columns{
             y = f32(h*100) + start_y
-            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}})
+            append(&tiles, Tile{"", k2.Rect{x, y, 50, 50}, " ", 0,  {}})
         }
         start_y += 50
         columns -= 1   

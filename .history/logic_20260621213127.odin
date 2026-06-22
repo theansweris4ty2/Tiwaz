@@ -4,8 +4,10 @@ import "core:math/rand"
 import k2 "vendor:karl2d"
 
 
-
-
+// Placeholder proc to test whether having proc associated with tiles works
+turn_red :: proc(tile: ^Tile){
+    tile.color = k2.RED
+}
 
 // TODO add logic for building UI either in the build_board proc or as a separate proc. 
 build_board :: proc() -> [dynamic]Tile{
@@ -18,7 +20,7 @@ build_board :: proc() -> [dynamic]Tile{
         x = f32(i*100) + 350
         for h in 0..=i {
             y = f32(h*100) + start_y
-            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}})
+            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  til})
         }
         start_y -= 50
         start_x += 50
@@ -29,14 +31,14 @@ build_board :: proc() -> [dynamic]Tile{
         x = f32(i*100) + f32(850) 
         for h in 0..=columns{
             y = f32(h*100) + start_y
-            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}})
+            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  k2.BLACK})
         }
         start_y += 50
         columns -= 1   
     }
      for &tile in tiles {
         tile.production_value = rand.int32_range(1, 5)
-        tile_variant := rand.int32_range(0,4)
+        tile_variant := rand.int32_range(0,3)
         switch tile_variant {
             case 0: 
                 tile.kind = "farm"
@@ -45,15 +47,15 @@ build_board :: proc() -> [dynamic]Tile{
             case 1:
                 tile.kind = "forest"
                 tile.product = "lumber"
-                tile.texture = k2.load_texture_from_file("assets/woodSquare.png")
+                k2.load_texture_from_file("assets/woodSquare.png")
             case 2: 
                 tile.kind = "mine"
                 tile.product = "ore"
-                tile.texture = k2.load_texture_from_file("assets/oreSquare.png")
+                k2.load_texture_from_file("assets/oreSquare.png")
             case 3: 
                 tile.kind = "military"
                 tile.product = "recruits"
-                tile.texture = k2.load_texture_from_file("assets/militarySquare.png")
+                k2.load_texture_from_file("assets/militarySquare.png")
 
         }
     }

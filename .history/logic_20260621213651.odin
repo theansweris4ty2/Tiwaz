@@ -4,7 +4,7 @@ import "core:math/rand"
 import k2 "vendor:karl2d"
 
 
-
+// Placeholder proc to test whether having proc associated with tiles works
 
 
 // TODO add logic for building UI either in the build_board proc or as a separate proc. 
@@ -36,7 +36,7 @@ build_board :: proc() -> [dynamic]Tile{
     }
      for &tile in tiles {
         tile.production_value = rand.int32_range(1, 5)
-        tile_variant := rand.int32_range(0,4)
+        tile_variant := rand.int32_range(0,)
         switch tile_variant {
             case 0: 
                 tile.kind = "farm"

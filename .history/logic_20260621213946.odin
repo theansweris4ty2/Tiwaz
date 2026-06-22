@@ -4,7 +4,7 @@ import "core:math/rand"
 import k2 "vendor:karl2d"
 
 
-
+// Placeholder proc to test whether having proc associated with tiles works
 
 
 // TODO add logic for building UI either in the build_board proc or as a separate proc. 
