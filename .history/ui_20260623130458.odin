@@ -2,11 +2,7 @@ package Tiwaz
 import "core:fmt"
 import k2 "vendor:karl2d"
 
-SLATE :: k2.Color {123, 111, 131, 255}
-BRICK :: k2.Color{156, 67, 0, 1}
-OCEAN_BLUE :: k2.Color{79, 166, 235, 255}
-FOREST_GREEN :: k2.Color{81, 125, 25, 255}
-WHEAT_GOLD :: k2.Color{240, 173, 0, 255}
+WHEAT :: Color {245, 222, 179, 255}
 
 Button :: struct {
     rect: k2.Rect,
@@ -36,9 +32,9 @@ create_ui ::proc() -> (first_buttons: [dynamic; 5]Button, main: Menu) {
     main_menu_button1:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 100, 100, 50}, k2.RED, "Action"}
     main_menu_button2:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 150, 100, 50}, k2.RED, "Action"}
     main_menu_button3:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 200, 100, 50}, k2.RED, "Action"}
-    action_button1:= Button{{main_menu.rect.x + 50, main_menu.rect.y + 300, 110, 50}, WHEAT_GOLD, "Farm"}
-    action_button2:= Button{{main_menu.rect.x + 160, main_menu.rect.y + 300, 110, 50}, FOREST_GREEN, "Log"}
-    action_button3:= Button{{main_menu.rect.x + 270, main_menu.rect.y + 300, 110, 50}, SLATE, "Mining"}
+    action_button1:= Button{{main_menu.rect.x + 50, main_menu.rect.y + 300, 100, 50}, k2.ORANGE, "Harvest"}
+    action_button2:= Button{{main_menu.rect.x + 150, main_menu.rect.y + 300, 100, 50}, k2.GREEN, "Logging"}
+    action_button3:= Button{{main_menu.rect.x + 250, main_menu.rect.y + 300, 100, 50}, k2.GRAY, "Mining"}
     append(&main_menu.buttons, main_menu_button1)
     append(&main_menu.buttons, main_menu_button2)
     append(&main_menu.buttons, main_menu_button3)

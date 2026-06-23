@@ -29,7 +29,7 @@ build_board :: proc() -> [dynamic]Tile{
         x = f32(i*100) + f32(850) 
         for h in 0..=columns{
             y = f32(h*100) + start_y
-            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}, false})
+            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}})
         }
         start_y += 50
         columns -= 1   
@@ -67,7 +67,7 @@ draw_board::proc(tiles:[dynamic]Tile){
             tile_border = k2.BLUE
         }else { tile_border = k2.BLACK}
     k2.draw_texture(tile.texture, {tile.rect.x, tile.rect.y})
-    k2.draw_rect_outline(tile.rect, 3, tile_border)
+    k2.draw_rect_outline(tile.rect, 1, tile_border)
 } 
 }
 

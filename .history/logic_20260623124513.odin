@@ -67,7 +67,7 @@ draw_board::proc(tiles:[dynamic]Tile){
             tile_border = k2.BLUE
         }else { tile_border = k2.BLACK}
     k2.draw_texture(tile.texture, {tile.rect.x, tile.rect.y})
-    k2.draw_rect_outline(tile.rect, 3, tile_border)
+    k2.draw_rect_outline(tile.rect, 5, tile_border)
 } 
 }
 

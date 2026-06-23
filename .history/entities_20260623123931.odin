@@ -7,7 +7,7 @@ Tile :: struct {
     product: string,
     production_value: i32,
     texture: k2.Texture,
-    occupied: bool
+    
     
 
 }

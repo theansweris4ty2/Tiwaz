@@ -18,7 +18,7 @@ build_board :: proc() -> [dynamic]Tile{
         x = f32(i*100) + 350
         for h in 0..=i {
             y = f32(h*100) + start_y
-            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}, false})
+            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}})
         }
         start_y -= 50
         start_x += 50
@@ -29,7 +29,7 @@ build_board :: proc() -> [dynamic]Tile{
         x = f32(i*100) + f32(850) 
         for h in 0..=columns{
             y = f32(h*100) + start_y
-            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}, false})
+            append(&tiles, Tile{"", k2.Rect{x, y, 100, 100}, " ", 0,  {}})
         }
         start_y += 50
         columns -= 1   
@@ -64,10 +64,11 @@ draw_board::proc(tiles:[dynamic]Tile){
     tile_border: k2.Color
     for tile in tiles {
         if tile.occupied == true{
-            tile_border = k2.BLUE
-        }else { tile_border = k2.BLACK}
+            tile.border = k2.BLUE
+        }
+        
     k2.draw_texture(tile.texture, {tile.rect.x, tile.rect.y})
-    k2.draw_rect_outline(tile.rect, 3, tile_border)
+    k2.draw_rect_outline(tile.rect, 1, tile_border
 } 
 }
 

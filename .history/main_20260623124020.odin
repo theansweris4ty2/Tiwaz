@@ -37,7 +37,7 @@ if k2.mouse_button_went_down(.Left) {
         if check_collisions(tile.rect, point) && player.action_points1 > 0{
             if player.action_points1 > 0 {
                 player.action_points1 -= 1
-                tile.occupied = true
+                
             } 
             else {
                 continue

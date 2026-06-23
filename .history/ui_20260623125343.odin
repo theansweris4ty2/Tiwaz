@@ -2,12 +2,6 @@ package Tiwaz
 import "core:fmt"
 import k2 "vendor:karl2d"
 
-SLATE :: k2.Color {123, 111, 131, 255}
-BRICK :: k2.Color{156, 67, 0, 1}
-OCEAN_BLUE :: k2.Color{79, 166, 235, 255}
-FOREST_GREEN :: k2.Color{81, 125, 25, 255}
-WHEAT_GOLD :: k2.Color{240, 173, 0, 255}
-
 Button :: struct {
     rect: k2.Rect,
     color: k2.Color,
@@ -17,7 +11,7 @@ Button :: struct {
 
 Menu :: struct {
     rect: k2.Rect,
-    buttons: [dynamic; 6]Button,
+    buttons: [dynamic; 5]Button,
     border: f32,
     label: string
 }
@@ -30,15 +24,15 @@ dice_files := [6]string{"assets/pipone.png", "assets/piptwo.png", "assets/pipthr
 create_ui ::proc() -> (first_buttons: [dynamic; 5]Button, main: Menu) {
     button1: Button = {{f32(100), f32(800), f32(100), f32(60)}, k2.RED, "ROLL"}
     buttons1:[dynamic; 5]Button
-    buttons2: [dynamic; 6]Button
+    buttons2: [dynamic; 5]Button
     append(&buttons1, button1)
     main_menu: Menu = {{1370, 650, 420, 500}, buttons2, 10, "Player Menu"}
     main_menu_button1:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 100, 100, 50}, k2.RED, "Action"}
     main_menu_button2:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 150, 100, 50}, k2.RED, "Action"}
     main_menu_button3:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 200, 100, 50}, k2.RED, "Action"}
-    action_button1:= Button{{main_menu.rect.x + 50, main_menu.rect.y + 300, 110, 50}, WHEAT_GOLD, "Farm"}
-    action_button2:= Button{{main_menu.rect.x + 160, main_menu.rect.y + 300, 110, 50}, FOREST_GREEN, "Log"}
-    action_button3:= Button{{main_menu.rect.x + 270, main_menu.rect.y + 300, 110, 50}, SLATE, "Mining"}
+    action_button1:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 100, 100, 50}, k2.LIGHT_YELLOW, "Harvest"}
+    action_button2:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 150, 100, 50}, k2.RED, "Log"}
+    action_button3:= Button{{main_menu.rect.x + 300, main_menu.rect.y + 200, 100, 50}, k2.RED, "Action"}
     append(&main_menu.buttons, main_menu_button1)
     append(&main_menu.buttons, main_menu_button2)
     append(&main_menu.buttons, main_menu_button3)
