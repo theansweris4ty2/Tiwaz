@@ -1,0 +1,19 @@
+package Tiwaz
+import k2 "vendor:karl2d"
+
+Button :: struct {
+    rect: k2.Rect,
+    color: k2.Color,
+    label: string,
+}
+
+
+Menu :: struct {
+    rect: k2.Rect,
+    buttons: [dynamic; 5]Button
+}
+
+
+main_menu:= Menu{{1350, 700, 400, 400}, {}}
+
+create_ui ::

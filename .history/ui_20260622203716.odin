@@ -1,0 +1,29 @@
+package Tiwaz
+import k2 "vendor:karl2d"
+
+Button :: struct {
+    rect: k2.Rect,
+    color: k2.Color,
+    label: string,
+}
+
+
+Menu :: struct {
+    rect: k2.Rect,
+    buttons: [dynamic; 5]Button,
+    label: string
+}
+
+
+
+
+dice_files := [6]string{"assets/pipone.png", "assets/piptwo.png", "assets/pipthree.png", "assets/pipfour.png", "assets/pipfive.png", "assets/pipsix.png"}
+
+create_ui ::proc() -> (first_buttons: [dynamic; 5]Button, menu: menu) {
+    button1: Button = {{f32(100), f32(800), f32(100), f32(60)}, k2.RED, "ROLL"}
+    buttons1:[dynamic; 5]Button
+    buttons2: [dynamic; 5]Button
+    append(&buttons1, button1)
+    main_menu: Menu = {{1370, 650, 420, 500}, buttons2, "Player Menu"}
+    return buttons1, main_men
+}
